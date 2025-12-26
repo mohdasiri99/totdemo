@@ -46,6 +46,8 @@
         .option-btn:hover:not(:disabled) { background-color: #f1f5f9; border-color: #94a3b8; }
         .option-btn.correct { background-color: #dcfce7; border-color: #22c55e; color: #166534; }
         .option-btn.wrong { background-color: #fee2e2; border-color: #ef4444; color: #991b1b; }
+        .model-card { transition: all 0.3s; cursor: pointer; }
+        .model-card:hover { transform: scale(1.02); border-color: #3b82f6; }
     </style>
 </head>
 <body class="text-slate-800 flex flex-col min-h-screen">
@@ -92,7 +94,7 @@
             </div>
         </div>
 
-        <!-- Mobile Menu (Hidden by default) -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <button onclick="switchPage('home')" class="block w-full text-right px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">الدليل المرجعي</button>
@@ -147,6 +149,7 @@
                     <h2 class="text-2xl font-bold text-blue-800">المعرفة المهنية ونظريات التعلم</h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    <!-- Schools Cards -->
                     <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-blue-500 domain-card">
                         <h3 class="font-bold text-lg mb-2 text-blue-800">1. المدرسة السلوكية</h3>
                         <p class="text-xs text-gray-500 mb-2">بافلوف، سكينر</p>
@@ -255,92 +258,108 @@
         </section>
 
 
-        <!-- PAGE 2: VIDEOS (UPDATED WITH LINKS) -->
+        <!-- PAGE 2: VIDEOS -->
         <section id="videos" class="page-section">
             <h2 class="text-3xl font-black text-slate-900 mb-8 border-b pb-4">مكتبة المرئيات (الرخصة المهنية)</h2>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Video 1 -->
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100">
                     <div class="aspect-w-16 aspect-h-9 relative group">
-                        <iframe class="w-full h-56" src="https://www.youtube.com/embed/IMoimtUXZcM" title="الرخصة المهنية للمدربين - اليوم الأول" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe class="w-full h-56" src="https://www.youtube.com/embed/IMoimtUXZcM" title="اليوم الأول" frameborder="0" allowfullscreen></iframe>
                     </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg mb-2 text-slate-800">الرخصة المهنية للمدربين - اليوم الأول</h3>
-                        <p class="text-sm text-slate-500">أساسيات التدريب ونظريات التعلم.</p>
-                    </div>
+                    <div class="p-4"><h3 class="font-bold text-lg mb-2 text-slate-800">الرخصة المهنية للمدربين - اليوم الأول</h3></div>
                 </div>
-
-                <!-- Video 2 -->
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100">
                     <div class="aspect-w-16 aspect-h-9 relative group">
-                        <iframe class="w-full h-56" src="https://www.youtube.com/embed/AsZPzSXoDvU" title="الرخصة المهنية للمدربين - اليوم الثاني" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe class="w-full h-56" src="https://www.youtube.com/embed/AsZPzSXoDvU" title="اليوم الثاني" frameborder="0" allowfullscreen></iframe>
                     </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg mb-2 text-slate-800">الرخصة المهنية للمدربين - اليوم الثاني</h3>
-                        <p class="text-sm text-slate-500">تصميم الحقائب وأساليب التدريب.</p>
-                    </div>
+                    <div class="p-4"><h3 class="font-bold text-lg mb-2 text-slate-800">الرخصة المهنية للمدربين - اليوم الثاني</h3></div>
                 </div>
-
-                <!-- Video 3 -->
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100">
                     <div class="aspect-w-16 aspect-h-9 relative group">
-                        <iframe class="w-full h-56" src="https://www.youtube.com/embed/VICfHGd1qUQ" title="الرخصة المهنية للمدربين - اليوم الثالث" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe class="w-full h-56" src="https://www.youtube.com/embed/VICfHGd1qUQ" title="اليوم الثالث" frameborder="0" allowfullscreen></iframe>
                     </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg mb-2 text-slate-800">الرخصة المهنية للمدربين - اليوم الثالث</h3>
-                        <p class="text-sm text-slate-500">مهارات العرض والإلقاء والتقييم.</p>
-                    </div>
+                    <div class="p-4"><h3 class="font-bold text-lg mb-2 text-slate-800">الرخصة المهنية للمدربين - اليوم الثالث</h3></div>
                 </div>
             </div>
         </section>
 
 
-        <!-- PAGE 3: SIMULATED TESTS (UPDATED 25 QUESTIONS) -->
+        <!-- PAGE 3: SIMULATED TESTS (UPDATED - 4 MODELS) -->
         <section id="tests" class="page-section">
-            <h2 class="text-3xl font-black text-slate-900 mb-8 border-b pb-4">اختبارات الرخصة المهنية (25 سؤالاً)</h2>
+            <h2 class="text-3xl font-black text-slate-900 mb-8 border-b pb-4">مركز الاختبارات والمحاكاة</h2>
             
-            <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 max-w-4xl mx-auto">
+            <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 max-w-5xl mx-auto">
                 
-                <!-- Start Screen -->
-                <div id="quiz-start" class="text-center py-10">
-                    <div class="text-6xl mb-4">📝</div>
-                    <h3 class="text-2xl font-bold mb-4">اختبار محاكاة شامل</h3>
-                    <p class="text-slate-600 mb-8">يتكون هذا الاختبار من 25 سؤالاً تغطي كافة مجالات الرخصة المهنية للمدربين (المعرفة، الممارسة، القيم، المهارات). هل أنت مستعد؟</p>
-                    <button onclick="startQuiz()" class="bg-slate-900 text-white px-8 py-3 rounded-xl font-bold hover:bg-slate-800 transition">ابدأ الاختبار الآن</button>
+                <!-- Model Selection Screen -->
+                <div id="model-selection" class="text-center py-6">
+                    <h3 class="text-2xl font-bold mb-2 text-slate-800">اختر نموذج الاختبار</h3>
+                    <p class="text-slate-500 mb-8">اختر المستوى المناسب لك لبدء التدريب (25 سؤال لكل نموذج)</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-right">
+                        <!-- Model 1 -->
+                        <div onclick="startQuiz(1)" class="model-card border-2 border-slate-100 p-6 rounded-xl hover:bg-blue-50 group">
+                            <div class="text-blue-500 text-3xl mb-3"><i class="fa-solid fa-layer-group"></i></div>
+                            <h4 class="font-bold text-lg text-slate-800 group-hover:text-blue-700">النموذج الأول</h4>
+                            <span class="text-xs font-bold text-white bg-blue-500 px-2 py-1 rounded">متقدم</span>
+                            <p class="text-xs text-slate-500 mt-2">الكفايات الأساسية وتطبيق النظريات.</p>
+                        </div>
+                        <!-- Model 2 -->
+                        <div onclick="startQuiz(2)" class="model-card border-2 border-slate-100 p-6 rounded-xl hover:bg-emerald-50 group">
+                            <div class="text-emerald-500 text-3xl mb-3"><i class="fa-solid fa-chart-pie"></i></div>
+                            <h4 class="font-bold text-lg text-slate-800 group-hover:text-emerald-700">النموذج الثاني</h4>
+                            <span class="text-xs font-bold text-white bg-emerald-500 px-2 py-1 rounded">خبير</span>
+                            <p class="text-xs text-slate-500 mt-2">تصميم الحقائب، القياس ROI، والتحليل.</p>
+                        </div>
+                        <!-- Model 3 -->
+                        <div onclick="startQuiz(3)" class="model-card border-2 border-slate-100 p-6 rounded-xl hover:bg-amber-50 group">
+                            <div class="text-amber-500 text-3xl mb-3"><i class="fa-solid fa-users-viewfinder"></i></div>
+                            <h4 class="font-bold text-lg text-slate-800 group-hover:text-amber-700">النموذج الثالث</h4>
+                            <span class="text-xs font-bold text-white bg-amber-500 px-2 py-1 rounded">مواقف حرجة</span>
+                            <p class="text-xs text-slate-500 mt-2">إدارة القاعة، السلوكيات، والمشكلات.</p>
+                        </div>
+                        <!-- Model 4 -->
+                        <div onclick="startQuiz(4)" class="model-card border-2 border-slate-100 p-6 rounded-xl hover:bg-rose-50 group">
+                            <div class="text-rose-500 text-3xl mb-3"><i class="fa-solid fa-brain"></i></div>
+                            <h4 class="font-bold text-lg text-slate-800 group-hover:text-rose-700">النموذج الرابع</h4>
+                            <span class="text-xs font-bold text-white bg-rose-500 px-2 py-1 rounded">ماستر / استراتيجي</span>
+                            <p class="text-xs text-slate-500 mt-2">تفكير ابتكاري، تخطيط، حلول معقدة.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Quiz Container -->
-                <div id="quiz-container" class="hidden">
-                    <!-- Progress Bar -->
-                    <div class="w-full bg-gray-200 rounded-full h-2.5 mb-6">
-                        <div id="progress-bar" class="bg-blue-600 h-2.5 rounded-full" style="width: 0%"></div>
-                    </div>
-                    
-                    <div class="flex justify-between items-center mb-6">
-                        <span id="question-count" class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">سؤال 1 من 25</span>
-                        <span id="score-display" class="text-slate-500 text-sm font-bold">النتيجة: 0</span>
+                <!-- Quiz Interface (Hidden Initially) -->
+                <div id="quiz-interface" class="hidden">
+                    <div class="flex justify-between items-center mb-6 border-b pb-4">
+                        <div>
+                            <span id="active-model-name" class="font-bold text-slate-800 text-lg block"></span>
+                            <span id="question-count" class="text-xs text-slate-500">سؤال 1 من 25</span>
+                        </div>
+                        <button onclick="exitQuiz()" class="text-red-500 text-sm font-bold hover:bg-red-50 px-3 py-1 rounded"><i class="fa-solid fa-xmark ml-1"></i> خروج</button>
                     </div>
 
-                    <h3 id="question-text" class="text-xl font-bold text-slate-800 mb-6 leading-relaxed">نص السؤال يظهر هنا...</h3>
-                    
-                    <div id="options-container" class="space-y-3">
-                        <!-- Options will be injected here -->
+                    <!-- Progress Bar -->
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-6">
+                        <div id="progress-bar" class="bg-blue-600 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
                     </div>
+
+                    <h3 id="question-text" class="text-lg md:text-xl font-bold text-slate-800 mb-6 leading-relaxed"></h3>
+                    
+                    <div id="options-container" class="space-y-3"></div>
 
                     <div id="feedback-area" class="hidden mt-6 p-4 rounded-lg bg-gray-50 border border-gray-200">
-                        <p id="feedback-text" class="text-sm font-bold"></p>
-                        <button onclick="nextQuestion()" class="mt-4 bg-slate-900 text-white px-6 py-2 rounded-lg text-sm hover:bg-slate-800">السؤال التالي <i class="fa-solid fa-arrow-left mr-1"></i></button>
+                        <p id="feedback-text" class="text-sm font-bold mb-2"></p>
+                        <p id="feedback-explanation" class="text-xs text-slate-600 mb-3"></p>
+                        <button onclick="nextQuestion()" class="bg-slate-900 text-white px-6 py-2 rounded-lg text-sm hover:bg-slate-800">السؤال التالي</button>
                     </div>
                 </div>
 
                 <!-- Result Screen -->
                 <div id="quiz-result" class="hidden text-center py-10">
-                    <div id="result-icon" class="text-6xl mb-4">🏆</div>
-                    <h3 class="text-2xl font-bold mb-2">أتممت الاختبار بنجاح!</h3>
-                    <p class="text-lg text-slate-600 mb-6">نتيجتك النهائية: <span id="final-score" class="font-bold text-blue-600 text-2xl">0</span> / 25</p>
-                    <div id="result-message" class="text-sm text-slate-500 mb-8 bg-slate-50 p-4 rounded-lg"></div>
-                    <button onclick="location.reload()" class="bg-slate-900 text-white px-8 py-3 rounded-xl font-bold hover:bg-slate-800 transition">إعادة الاختبار</button>
+                    <div class="text-6xl mb-4">🏆</div>
+                    <h3 class="text-2xl font-bold mb-2">انتهى الاختبار</h3>
+                    <p class="text-lg text-slate-600 mb-6">النتيجة: <span id="final-score" class="font-bold text-blue-600 text-2xl">0</span> / 25</p>
+                    <div id="result-message" class="text-sm p-4 rounded-lg mb-6"></div>
+                    <button onclick="exitQuiz()" class="bg-slate-900 text-white px-8 py-3 rounded-xl font-bold hover:bg-slate-800 transition">العودة للقائمة</button>
                 </div>
 
             </div>
@@ -350,61 +369,34 @@
         <!-- PAGE 4: COURSES -->
         <section id="courses" class="page-section">
             <h2 class="text-3xl font-black text-slate-900 mb-8 border-b pb-4">الدورات التدريبية المتاحة</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Course 1 -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden domain-card flex flex-col">
-                    <div class="h-40 bg-blue-600 flex items-center justify-center">
-                        <i class="fa-solid fa-chalkboard-user text-white text-5xl"></i>
-                    </div>
-                    <div class="p-6 flex-grow">
-                        <div class="text-xs font-bold text-blue-600 mb-2 uppercase">مستوى تأسيسي</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">دورة تدريب المدربين (TOT)</h3>
-                        <p class="text-sm text-slate-500 mb-4">الدورة الأساسية للحصول على الرخصة المهنية واحتراف الوقوف أمام الجمهور.</p>
-                        <ul class="text-xs text-slate-500 space-y-1 mb-6">
-                            <li><i class="fa-solid fa-clock ml-2"></i> 50 ساعة تدريبية</li>
-                            <li><i class="fa-solid fa-certificate ml-2"></i> شهادة معتمدة</li>
-                        </ul>
-                    </div>
-                    <div class="p-6 pt-0 mt-auto">
-                        <button class="w-full bg-slate-900 text-white font-bold py-3 rounded-xl hover:bg-slate-800 transition opacity-50 cursor-not-allowed">سجل الآن</button>
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden domain-card">
+                    <div class="h-40 bg-blue-600 flex items-center justify-center"><i class="fa-solid fa-chalkboard-user text-white text-5xl"></i></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">دورة تدريب المدربين (TOT)</h3>
+                        <p class="text-sm text-slate-500 mb-4">الدورة الأساسية للرخصة.</p>
+                        <button class="w-full bg-slate-900 text-white font-bold py-3 rounded-xl opacity-50 cursor-not-allowed">سجل الآن</button>
                         <p class="text-red-500 text-xs font-bold text-center mt-2">(غير متاح حالياً)</p>
                     </div>
                 </div>
                 <!-- Course 2 -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden domain-card flex flex-col">
-                    <div class="h-40 bg-emerald-600 flex items-center justify-center">
-                        <i class="fa-solid fa-pen-ruler text-white text-5xl"></i>
-                    </div>
-                    <div class="p-6 flex-grow">
-                        <div class="text-xs font-bold text-emerald-600 mb-2 uppercase">مستوى متقدم</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">أخصائي تصميم حقائب تدريبية</h3>
-                        <p class="text-sm text-slate-500 mb-4">احتراف استخدام نموذج ADDIE وتصميم الحقائب وفق معايير الجودة.</p>
-                        <ul class="text-xs text-slate-500 space-y-1 mb-6">
-                            <li><i class="fa-solid fa-clock ml-2"></i> 25 ساعة تدريبية</li>
-                            <li><i class="fa-solid fa-file-pdf ml-2"></i> نماذج جاهزة</li>
-                        </ul>
-                    </div>
-                    <div class="p-6 pt-0 mt-auto">
-                        <button class="w-full bg-slate-900 text-white font-bold py-3 rounded-xl hover:bg-slate-800 transition opacity-50 cursor-not-allowed">سجل الآن</button>
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden domain-card">
+                    <div class="h-40 bg-emerald-600 flex items-center justify-center"><i class="fa-solid fa-pen-ruler text-white text-5xl"></i></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">تصميم الحقائب التدريبية</h3>
+                        <p class="text-sm text-slate-500 mb-4">احتراف ADDIE.</p>
+                        <button class="w-full bg-slate-900 text-white font-bold py-3 rounded-xl opacity-50 cursor-not-allowed">سجل الآن</button>
                         <p class="text-red-500 text-xs font-bold text-center mt-2">(غير متاح حالياً)</p>
                     </div>
                 </div>
                 <!-- Course 3 -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden domain-card flex flex-col">
-                    <div class="h-40 bg-purple-600 flex items-center justify-center">
-                        <i class="fa-solid fa-chart-line text-white text-5xl"></i>
-                    </div>
-                    <div class="p-6 flex-grow">
-                        <div class="text-xs font-bold text-purple-600 mb-2 uppercase">مستوى إداري</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">قياس العائد على التدريب (ROI)</h3>
-                        <p class="text-sm text-slate-500 mb-4">كيف تقيس أثر التدريب مالياً وإدارياً باستخدام منهجية جاك فيليبس.</p>
-                        <ul class="text-xs text-slate-500 space-y-1 mb-6">
-                            <li><i class="fa-solid fa-clock ml-2"></i> 15 ساعة تدريبية</li>
-                            <li><i class="fa-solid fa-calculator ml-2"></i> أدوات قياس</li>
-                        </ul>
-                    </div>
-                    <div class="p-6 pt-0 mt-auto">
-                        <button class="w-full bg-slate-900 text-white font-bold py-3 rounded-xl hover:bg-slate-800 transition opacity-50 cursor-not-allowed">سجل الآن</button>
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden domain-card">
+                    <div class="h-40 bg-purple-600 flex items-center justify-center"><i class="fa-solid fa-chart-line text-white text-5xl"></i></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">قياس العائد (ROI)</h3>
+                        <p class="text-sm text-slate-500 mb-4">منهجية جاك فيليبس.</p>
+                        <button class="w-full bg-slate-900 text-white font-bold py-3 rounded-xl opacity-50 cursor-not-allowed">سجل الآن</button>
                         <p class="text-red-500 text-xs font-bold text-center mt-2">(غير متاح حالياً)</p>
                     </div>
                 </div>
@@ -415,228 +407,244 @@
         <!-- PAGE 5: CONTACT -->
         <section id="contact" class="page-section">
             <h2 class="text-3xl font-black text-slate-900 mb-8 border-b pb-4">اتصل بنا</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-4">لنتواصل سوياً</h3>
-                    <p class="text-slate-600 mb-8">يسعدنا استقبال استفساراتكم حول الدورات، أو طلب استشارات في مجال تطوير الأداء والتدريب.</p>
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 text-xl">
-                                <i class="fa-brands fa-twitter"></i>
-                            </div>
-                            <div>
-                                <strong class="block text-slate-800">تويتر (X)</strong>
-                                <a href="https://x.com/mohdasiri99" target="_blank" class="text-sm text-slate-500 hover:text-blue-600" dir="ltr">@mohdasiri99</a>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-600 text-xl">
-                                <i class="fa-brands fa-whatsapp"></i>
-                            </div>
-                            <div>
-                                <strong class="block text-slate-800">واتساب</strong>
-                                <span class="text-sm text-slate-500" dir="ltr">+966 5x xxx xxxx</span>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-rose-50 rounded-full flex items-center justify-center text-rose-600 text-xl">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div>
-                                <strong class="block text-slate-800">البريد الإلكتروني</strong>
-                                <span class="text-sm text-slate-500">contact@mohdasiri.com</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
-                    <form onsubmit="event.preventDefault(); alert('تم إرسال رسالتك بنجاح!');">
-                        <div class="mb-4">
-                            <label class="block text-sm font-bold text-slate-700 mb-2">الاسم الكامل</label>
-                            <input type="text" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-slate-500 focus:outline-none" placeholder="أدخل اسمك">
-                        </div>
-                        <div class="mb-4">
-                            <label class="block text-sm font-bold text-slate-700 mb-2">البريد الإلكتروني</label>
-                            <input type="email" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-slate-500 focus:outline-none" placeholder="name@example.com">
-                        </div>
-                        <div class="mb-4">
-                            <label class="block text-sm font-bold text-slate-700 mb-2">الرسالة</label>
-                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-slate-500 focus:outline-none" placeholder="اكتب استفسارك هنا..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-slate-900 text-white font-bold py-3 rounded-lg hover:bg-slate-800 transition">إرسال الرسالة</button>
-                    </form>
-                </div>
+            <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 max-w-2xl mx-auto">
+                <form onsubmit="event.preventDefault(); alert('تم إرسال رسالتك بنجاح!');">
+                    <div class="mb-4"><label class="block text-sm font-bold text-slate-700 mb-2">الاسم</label><input type="text" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200"></div>
+                    <div class="mb-4"><label class="block text-sm font-bold text-slate-700 mb-2">البريد</label><input type="email" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200"></div>
+                    <div class="mb-4"><label class="block text-sm font-bold text-slate-700 mb-2">الرسالة</label><textarea rows="4" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200"></textarea></div>
+                    <button class="w-full bg-slate-900 text-white font-bold py-3 rounded-lg hover:bg-slate-800">إرسال</button>
+                </form>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 py-8 mt-auto">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <div class="flex justify-center items-center gap-2 mb-4">
-                <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white text-sm">
-                    <i class="fa-solid fa-chalkboard-user"></i>
-                </div>
-                <span class="font-bold text-lg text-slate-800">منصة المدرب محمد علي عسيري</span>
-            </div>
-            <p class="text-slate-400 text-sm mb-4">جميع الحقوق محفوظة © محمد علي عسيري 2025</p>
-            <div class="flex justify-center gap-4 text-slate-400">
-                <a href="https://x.com/mohdasiri99" class="hover:text-slate-800"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#" class="hover:text-slate-800"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#" class="hover:text-slate-800"><i class="fa-brands fa-youtube"></i></a>
-            </div>
+            <p class="text-slate-400 text-sm">جميع الحقوق محفوظة © محمد علي عسيري 2025</p>
         </div>
     </footer>
 
-    <!-- JavaScript for SPA & Quiz -->
+    <!-- JavaScript Engine -->
     <script>
-        // --- 1. SPA Navigation Logic ---
+        // --- Navigation ---
         function switchPage(pageId) {
-            const sections = document.querySelectorAll('.page-section');
-            sections.forEach(section => section.classList.remove('active'));
+            document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
-            window.scrollTo(0, 0);
-
-            const navItems = document.querySelectorAll('.nav-item');
-            navItems.forEach(item => item.classList.remove('active'));
-            const activeNav = document.getElementById('nav-' + pageId);
-            if (activeNav) activeNav.classList.add('active');
-
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (!mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-            }
+            window.scrollTo(0,0);
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            const nav = document.getElementById('nav-'+pageId);
+            if(nav) nav.classList.add('active');
+            document.getElementById('mobile-menu').classList.add('hidden');
         }
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
 
-        function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        }
+        // --- Quiz Data ---
+        // Generating 25 unique questions for each model structure
+        const quizData = {
+            1: [ // Model 1: Advanced (Knowledge & Basic Application)
+                { q: "المدرسة التي تركز على السلوك الظاهر والتعزيز هي:", a: ["السلوكية", "المعرفية", "البنائية", "الإنسانية"], c: 0 },
+                { q: "في تصنيف بلوم، القدرة على تذكر المعلومات تقع في مستوى:", a: ["الفهم", "التذكر", "التطبيق", "التحليل"], c: 1 },
+                { q: "المرحلة الأولى في نموذج ADDIE هي:", a: ["التصميم", "التطوير", "التحليل", "التقييم"], c: 2 },
+                { q: "أي مما يلي يعتبر من أدوات التدريب غير المتزامن؟", a: ["ورشة عمل", "فيديو مسجل", "بث مباشر", "نقاش حي"], c: 1 },
+                { q: "القبعة البيضاء في قبعات التفكير الست ترمز إلى:", a: ["المشاعر", "الحقائق والأرقام", "الإبداع", "النقد"], c: 1 },
+                { q: "من رواد النظرية المعرفية:", a: ["سكينر", "بياجيه", "باندورا", "ماسلو"], c: 1 },
+                { q: "الهدف السلوكي يجب أن يكون:", a: ["غامضاً", "طويلاً", "قابلاً للقياس", "مستحيلاً"], c: 2 },
+                { q: "تحليل الاحتياجات الوظيفي يركز على:", a: ["أهداف المنظمة", "مهام الوظيفة", "أداء الفرد", "رغبة المدير"], c: 1 },
+                { q: "مخروط الخبرة لإدجار ديل يشير إلى أننا نتذكر 10% مما:", a: ["نقرأه", "نسمعه", "نراه", "نمارسه"], c: 0 },
+                { q: "الذكاء العاطفي يتضمن:", a: ["القدرات الحسابية", "الوعي بالذات", "الذاكرة", "سرعة القراءة"], c: 1 },
+                { q: "استراتيجية العصف الذهني تهدف إلى:", a: ["نقد الأفكار", "توليد كمية أفكار", "اختيار فكرة واحدة", "الصمت"], c: 1 },
+                { q: "المتدرب 'بصري' يفضل:", a: ["النقاش", "الصور والمخططات", "الحركة", "الاستماع"], c: 1 },
+                { q: "التقييم التكويني يحدث:", a: ["قبل التدريب", "أثناء التدريب", "بعد التدريب", "بعد سنة"], c: 1 },
+                { q: "كسر الجليد يستخدم لـ:", a: ["إنهاء الدورة", "بناء الألفة", "توزيع الشهادات", "الاختبار"], c: 1 },
+                { q: "لغة الجسد تشكل نسبة ... من تأثير الرسالة:", a: ["7%", "38%", "55%", "90%"], c: 2 },
+                { q: "النزاهة العلمية تتطلب:", a: ["نسخ المحتوى", "نسب المعلومات لمصادرها", "تأليف قصص", "إخفاء المصادر"], c: 1 },
+                { q: "منصة Zoom تعتبر أداة لـ:", a: ["التصميم", "التقييم", "الفصول الافتراضية", "المونتاج"], c: 2 },
+                { q: "نمط المتعلم 'الحركي' يتعلم بـ:", a: ["المشاهدة", "العمل باليد", "القراءة", "الاستماع"], c: 1 },
+                { q: "قانون فيجاس في التدريب يعني:", a: ["السرية التامة", "اللعب", "المخاطرة", "الربح"], c: 0 },
+                { q: "التغذية الراجعة الساندوتش تبدأ بـ:", a: ["نقد", "إيجابية", "توجيه", "صمت"], c: 1 },
+                { q: "تحليل SWOT يستخدم لـ:", a: ["التخطيط الاستراتيجي", "تصميم الصور", "حساب التكلفة", "كتابة المحتوى"], c: 0 },
+                { q: "سكامبر هي أداة لـ:", a: ["التقييم", "التفكير الإبداعي", "التذكر", "الحساب"], c: 1 },
+                { q: "الهدف من الحقيبة التدريبية:", a: ["زيادة الورق", "توثيق وتنظيم المحتوى", "بيعها", "تعقيد التدريب"], c: 1 },
+                { q: "أهم مهارة للمدرب هي:", a: ["الصوت العالي", "الاتصال الفعال", "كثرة الحركة", "الأناقة"], c: 1 },
+                { q: "نموذج كيركباتريك يقيس:", a: ["أنماط الشخصية", "أثر التدريب", "الذكاء", "السرعة"], c: 1 }
+            ],
+            2: [ // Model 2: Expert (Design, ROI, Nuances)
+                { q: "في نموذج كيركباتريك، المستوى الرابع يقيس:", a: ["رد الفعل", "التعلم", "السلوك", "النتائج"], c: 3 },
+                { q: "معادلة العائد على الاستثمار ROI هي:", a: ["(العائد/التكلفة)×100", "(صافي الفائدة/التكلفة)×100", "التكلفة-العائد", "لا شيء مما سبق"], c: 1 },
+                { q: "الفرق الجوهري بين التعليم والتدريب هو أن التدريب يركز على:", a: ["المعرفة العامة", "المدى الطويل", "اكتساب المهارة وتغيير السلوك", "النظريات"], c: 2 },
+                { q: "في نموذج كولب، نمط 'الاستيعابي' يجمع بين:", a: ["مشاهدة وتفكير", "شعور وعمل", "تفكير وعمل", "شعور ومشاهدة"], c: 0 },
+                { q: "نموذج كيمب للتصميم يتميز بـ:", a: ["الخطية", "الشكل الدائري والمرونة", "الجمود", "التركيز التقني فقط"], c: 1 },
+                { q: "عند تصميم حقيبة تدريبية، دليل المدرب يحتوي على:", a: ["المحتوى فقط", "خطة الجلسات والزمن", "صور المتدربين", "سيرة ذاتية"], c: 1 },
+                { q: "النظرية التي تؤكد أن التعلم بناء اجتماعي هي:", a: ["السلوكية", "البنائية الاجتماعية (فيغوتسكي)", "المعرفية", "الإنسانية"], c: 1 },
+                { q: "تحليل الفجوة (Gap Analysis) يقارن بين:", a: ["المدرب والمتدرب", "الأداء الحالي والمأمول", "التكلفة والربح", "الوقت والجهد"], c: 1 },
+                { q: "في 4MAT، سؤال 'كيف؟' يخاطب المتعلم:", a: ["التخيلي", "التحليلي", "المنطقي (الحسي)", "الديناميكي"], c: 2 },
+                { q: "أداة Mentimeter تستخدم لـ:", a: ["التصويت والتفاعل الحي", "تصميم الصور", "كتابة النصوص", "إدارة الحضور"], c: 0 },
+                { q: "التعلم المصغر (Micro-learning) يعتمد على:", a: ["محاضرات طويلة", "كبسولات معرفية قصيرة", "كتب ضخمة", "مشاريع سنوية"], c: 1 },
+                { q: "المسؤول عن 'البقاء والأمان' في الدماغ الثالوثي:", a: ["القشرة المخية", "الدماغ الحوفي", "الدماغ الزاحف", "الفص الجبهي"], c: 2 },
+                { q: "التفكير التقاربي يهدف إلى:", a: ["توليد خيارات", "اختيار الحل الأمثل", "تشتيت الذهن", "الخيال"], c: 1 },
+                { q: "من عيوب المحاضرة التقليدية:", a: ["سلبية المتدرب", "تكلفتها عالية", "صعوبة إعدادها", "تفاعلها العالي"], c: 0 },
+                { q: "التقييم 'قبل' التدريب يسمى:", a: ["تكويني", "ختامي", "تشخيصي (قبلي)", "تتبعي"], c: 2 },
+                { q: "حقوق الملكية الفكرية للمواد التدريبية تعني:", a: ["منع استخدامها مطلقاً", "استخدامها مع الإشارة للمصدر", "نسبها لنفسك", "بيعها"], c: 1 },
+                { q: "التدريب الموجه بالأداء (Performance-based) يركز على:", a: ["المحتوى", "النتائج العملية", "وقت المدرب", "الشهادات"], c: 1 },
+                { q: "الفرق بين الهدف العام والتفصيلي:", a: ["لا فرق", "العام شامل والتفصيلي إجرائي", "العام قصير والتفصيلي طويل", "التفصيلي للمدرب فقط"], c: 1 },
+                { q: "استخدام القصص (Storytelling) يفعل:", a: ["الفص الأيسر", "الفص الأيمن والمشاعر", "الدماغ الزاحف", "الذاكرة قصيرة المدى"], c: 1 },
+                { q: "التدريب غير المتزامن يناسب:", a: ["تعلم المهارات اليدوية", "التعلم الذاتي والمرن", "النقاشات الحادة", "بناء الفريق"], c: 1 },
+                { q: "في سكامبر، حرف R يعني:", a: ["استبدل", "اعكس أو رتب", "احذف", "كبر"], c: 1 },
+                { q: "مؤشر KPI لـ 'معدل الرضا' يقاس بـ:", a: ["الاختبارات", "الاستبيانات", "الحضور", "التكلفة"], c: 1 },
+                { q: "التعلم المدمج (Blended) يجمع بين:", a: ["حضوري وإلكتروني", "نظري وعملي", "فيديو وصوت", "مدرب ومتدرب"], c: 0 },
+                { q: "من معايير الهدف الذكي SMART:", a: ["أن يكون عاماً", "أن يكون قابلاً للقياس", "أن يكون مستحيلاً", "أن يكون مفتوح الوقت"], c: 1 },
+                { q: "دور المدرب في المدرسة البنائية:", a: ["ملقن", "ميسر (Facilitator)", "مسيطر", "مراقب صامت"], c: 1 }
+            ],
+            3: [ // Model 3: Situational (Deep Scenarios)
+                { q: "متدرب يقاطعك باستمرار بمعلومات خاطئة، التصرف الأمثل:", a: ["توبيخه أمام الجميع", "تجاهله تماماً", "شكره وتصحيح المعلومة بلباقة", "طرده"], c: 2 },
+                { q: "تعطل جهاز العرض (البروجيكتور) فجأة، ماذا تفعل؟", a: ["تلغي الدورة", "تنتظر الصيانة ساعة", "تنتقل لخطة بديلة (نشاط/نقاش)", "تعتذر وتغادر"], c: 2 },
+                { q: "لاحظت مجموعة تتحدث جانباً وتضحك، كيف تتصرف؟", a: ["تصرخ عليهم", "تقترب منهم جسدياً وتواصل الشرح", "توقف الشرح وتنظر لهم", "تسألهم ماذا يضحككم"], c: 1 },
+                { q: "متدرب انطوائي يرفض المشاركة في الأنشطة، كيف تدمجه؟", a: ["تجبره بالقوة", "تعطيه مهام كتابية أو ثنائية", "تتركه وشأنه", "تسخر منه"], c: 1 },
+                { q: "سألك متدرب سؤالاً لا تعرف إجابته، ماذا تقول؟", a: ["تخترع إجابة", "تقول 'سؤال تافه'", "تعترف بعدم المعرفة وتعد بالبحث أو تسأل الجمهور", "تغير الموضوع"], c: 2 },
+                { q: "حدث خلاف حاد بين متدربين حول قضية سياسية، دورك:", a: ["المشاركة مع أحدهما", "إيقاف النقاش فوراً وتذكيرهم بقواعد الدورة", "تركهم يتجادلون", "تصويرهم"], c: 1 },
+                { q: "أحد المتدربين يستخدم الجوال بكثرة، الأسلوب غير المباشر:", a: ["سحب الجوال منه", "توجيه سؤال له", "الصمت والنظر إليه أو الاقتراب منه", "طرده"], c: 2 },
+                { q: "اكتشفت أن القاعة التدريبية باردة جداً ولا يوجد تحكم، ماذا تفعل؟", a: ["تكمل وكأن شيئاً لم يكن", "تزيد الحركة والأنشطة لتدفئتهم", "تنهي اليوم فوراً", "تشتكي للإدارة وتجلس"], c: 1 },
+                { q: "متدرب يدعي أنه يعرف أكثر منك ويحاول السيطرة، كيف تتعامل؟", a: ["تتحداه في المعلومات", "تستثمر معرفته وتعطيه دور الخبير المساعد بحدود", "تسكته", "تنسحب"], c: 1 },
+                { q: "شعرت بانخفاض طاقة المجموعة بعد الغداء، النشاط المناسب:", a: ["محاضرة نظرية دسمة", "نشاط حركي منشط (Energizer)", "فترة راحة أخرى", "عرض فيديو طويل"], c: 1 },
+                { q: "أنهيت المحتوى قبل الوقت المحدد بساعة، ماذا تفعل؟", a: ["تغادر مبكراً", "تفتح نقاشاً وتطبيقات إضافية", "تعيد الشرح ببطء", "تحكي قصصاً شخصية"], c: 1 },
+                { q: "متدرب يسأل سؤالاً سابقاً لأوانه سيتم شرحه غداً:", a: ["تشرحه فوراً باختصار", "تطلب منه الانتظار وتضعه في 'موقف السيارات'", "تتجاهله", "تغضب منه"], c: 1 },
+                { q: "المدير المباشر للمتدربين دخل القاعة فجأة، تصرفك:", a: ["ترتبك وتتوقف", "ترحب به وتكمل بشكل طبيعي", "تعطيه الميكروفون ليتحدث", "تغير الموضوع"], c: 1 },
+                { q: "وجدت أن مستوى المتدربين أقل بكثير مما توقعت:", a: ["تكمل كما خططت", "تبسط المحتوى وتزيد الأمثلة", "تلومهم على ضعفهم", "تلغي الدورة"], c: 1 },
+                { q: "متدرب يصر على مناقشة مشكلة شخصية خاصة جداً أمام الجميع:", a: ["تسمع له للنهاية", "تقاطعه بلطف وتقترح نقاشها في الاستراحة", "تضحك عليه", "تطلب رأي الجمهور"], c: 1 },
+                { q: "اكتشفت خطأ إملائياً فادحاً في شريحة العرض أثناء الشرح:", a: ["تتجاهله", "تعتذر وتصححه بمرح", "تلوم المصمم", "تغلق العرض"], c: 1 },
+                { q: "أحد المتدربين نام أثناء الشرح:", a: ["تصرخ ليقوم", "توقظه برمي قلم", "تغير نبرة صوتك أو تطلب نشاطاً جماعياً", "تصوره"], c: 2 },
+                { q: "الحضور قليل جداً (3 أشخاص) والمقرر ورشة عمل:", a: ["تلغي الورشة", "تحولها لجلسة كوتشينج ونقاش عميق", "تلقي محاضرة فقط", "تغضب"], c: 1 },
+                { q: "طلب منك المتدربون إلغاء الاستراحة للخروج مبكراً:", a: ["توافق فوراً", "تتفاوض معهم بما لا يخل بالعملية التعليمية", "ترفض بحدة", "تتجاهل الطلب"], c: 1 },
+                { q: "متدرب ينتقد المادة التدريبية بأنها 'نظرية ومملة':", a: ["تدافع عن نفسك", "تسأله عن توقعاته وتحاول ربط النظرية بتطبيقات عملية", "تطرده", "تتجاهله"], c: 1 },
+                { q: "تعطل الميكروفون في قاعة كبيرة:", a: ["تلغي الدورة", "تقترب من الجمهور وترفع صوتك", "تجلس صامتاً", "تستخدم الإشارة"], c: 1 },
+                { q: "سألك متدرب عن رأيك في قضية دينية أو سياسية حساسة:", a: ["تجاوب بصراحة", "ترفض الإجابة وتذكر بحيادية المنصة", "تهاجمه", "تفتح نقاشاً عاماً"], c: 1 },
+                { q: "نسيت المادة العلمية (الحقيبة) في البيت:", a: ["تعتذر وتلغي", "تعتمد على خبرتك وتستخدم الفليب شارت", "تذهب لإحضارها", "تبكي"], c: 1 },
+                { q: "متدرب يبكي فجأة أثناء نشاط مؤثر:", a: ["تتجاهله", "توقف الدورة", "تعطيه مساحة وتطمئن عليه بخصوصية", "تطلب من الجميع النظر إليه"], c: 2 },
+                { q: "الإدارة طلبت منك تقييم أداء المتدربين لغرض الترقية:", a: ["توافق وتعطيهم درجات عشوائية", "توضح أن دورك تدريبي وليس تقييمي وظيفي (بناء على الاتفاق)", "ترفض التدريب", "توافق سراً"], c: 1 }
+            ],
+            4: [ // Model 4: Mastery (Strategic & Complex)
+                { q: "عند تصميم برنامج لتغيير الثقافة المؤسسية، النموذج الأنسب هو:", a: ["ADDIE فقط", "كوتتر (Kotter) لإدارة التغيير مدمجاً مع التدريب", "المحاضرات", "التدريب الإلكتروني"], c: 1 },
+                { q: "لتدريب فريق عمل عن بعد من ثقافات مختلفة، يجب مراعاة:", a: ["المنطقة الزمنية فقط", "الذكاء الثقافي (CQ) وتنوع الأساليب", "اللغة الإنجليزية فقط", "التكلفة"], c: 1 },
+                { q: "شركة تعاني من انخفاض المبيعات، التدريب هو الحل إذا كان السبب:", a: ["جودة المنتج", "نقص المهارة لدى البائعين", "سوء السوق", "ضعف الرواتب"], c: 1 },
+                { q: "أفضل طريقة لقياس العائد (ROI) لبرنامج قيادي:", a: ["اختبار معرفي", "ملاحظة سلوك القادة وتأثيره على إنتاجية الفرق مالياً", "استبيان رضا", "عدد الحضور"], c: 1 },
+                { q: "التفكير التصميمي (Design Thinking) في التدريب يبدأ بـ:", a: ["التصميم", "التقمص (Empathize) وفهم المستخدم", "التجريب", "البيع"], c: 1 },
+                { q: "لتعزيز 'التعلم المستمر' في المنظمة، يجب الاعتماد على:", a: ["الدورات السنوية", "بناء نظام إدارة معرفة ومجتمعات ممارسة", "الكتب الورقية", "الاجتماعات"], c: 1 },
+                { q: "عند استخدام 'الواقع الافتراضي VR' في التدريب، الهدف الأساسي:", a: ["الإبهار", "محاكاة بيئات خطرة أو مكلفة بأمان", "تضييع الوقت", "تقليل التفاعل"], c: 1 },
+                { q: "المرونة المعرفية (Cognitive Flexibility) تعني:", a: ["تغيير الرأي بسرعة", "القدرة على التكيف مع مهام ومواقف ذهنية متعددة", "النسيان", "الثبات"], c: 1 },
+                { q: "تحليل البيانات الضخمة (Big Data) في التدريب يساعد في:", a: ["التنبؤ باحتياجات المتدرب وتخصيص المسار", "مراقبة الحضور", "تقليل التكلفة فقط", "إلغاء المدرب"], c: 0 },
+                { q: "استراتيجية 'الصف المقلوب' (Flipped Classroom) تعني:", a: ["تغيير الكراسي", "الدراسة في المنزل والتطبيق في القاعة", "المدرب يصبح متدرباً", "إلغاء المحتوى"], c: 1 },
+                { q: "نموذج 70-20-10 للتعلم يشير إلى أن 70% من التعلم يأتي من:", a: ["الدورات", "التوجيه", "الممارسة والخبرة في العمل", "القراءة"], c: 2 },
+                { q: "عند حدوث أزمة مفاجئة، النمط القيادي التدريبي المطلوب:", a: ["الديمقراطي", "الموجه (Directive) الحازم والسريع", "المتساهل", "التحليلي"], c: 1 },
+                { q: "لتحويل منظمة إلى 'منظمة متعلمة'، يجب التركيز على:", a: ["التدريب الفردي", "التعلم الجماعي والنظمي (Senge)", "المكافآت المالية", "التكنولوجيا"], c: 1 },
+                { q: "التلعيب (Gamification) يختلف عن اللعب بأنه:", a: ["للتسلية فقط", "استخدام عناصر اللعب في سياق غير ترفيهي لتحقيق هدف", "بدون قواعد", "للأطفال"], c: 1 },
+                { q: "الكفايات (Competencies) هي مزيج من:", a: ["معرفة فقط", "مهارة فقط", "معرفة ومهارة وسلوك (KSA)", "شهادات"], c: 2 },
+                { q: "التوجيه (Coaching) يختلف عن التدريب بأنه:", a: ["يعطي حلولاً", "يستخرج الحلول من المستفيد", "للجموع", "يركز على الماضي"], c: 1 },
+                { q: "لضمان انتقال أثر التدريب (Transfer of Training)، يجب:", a: ["توفير بيئة عمل داعمة للتطبيق", "زيادة مدة الدورة", "صعوبة الاختبار", "تجاهل المدير"], c: 0 },
+                { q: "الذكاء الاصطناعي التليدي (Generative AI) يمكنه مساعدة المدرب في:", a: ["استبدال المدرب كلياً", "توليد سيناريوهات ودراسات حالة مخصصة", "الحضور نيابة عنه", "لا فائدة منه"], c: 1 },
+                { q: "أخلاقيات الـ AI في التدريب تتطلب:", a: ["الاعتماد الأعمى عليه", "الشفافية والتحقق من التحيز ودقة المعلومات", "منع استخدامه", "سرقة المحتوى"], c: 1 },
+                { q: "نظرية 'حمل العبء المعرفي' توصي بـ:", a: ["زيادة المعلومات", "تقليل المشتتات وتجزئة المحتوى (Chunking)", "السرعة في الشرح", "إلغاء الصور"], c: 1 },
+                { q: "لبناء 'ماركة شخصية' كمدرب خبير، يجب عليك:", a: ["تقليد المشاهير", "التخصص ونشر محتوى أصيل وقيم", "شراء متابعين", "انتقاد الآخرين"], c: 1 },
+                { q: "عند التعامل مع 'مقاومة التغيير' لدى المتدربين الكبار:", a: ["إجبارهم", "توضيح الفائدة الشخصية (WIIFM) واحترام خبرتهم", "تجاهلهم", "عزلهم"], c: 1 },
+                { q: "التدريب الموجه للابتكار يعتمد على:", a: ["الحفظ", "التجريب والفشل السريع (Fail Fast)", "القوانين الصارمة", "الخوف"], c: 1 },
+                { q: "الفرق بين الميسر (Facilitator) والمحاضر:", a: ["الميسر يدير العملية والجمهور يولد المحتوى", "المحاضر يدير النقاش", "لا فرق", "الميسر لا يتحدث"], c: 0 },
+                { q: "مستقبل التدريب يتجه نحو:", a: ["الدورات الطويلة", "التخصيص الفائق (Hyper-personalization)", "إلغاء التدريب", "العودة للورق"], c: 1 }
+            ]
+        };
 
-        // --- 2. Quiz Engine Logic ---
-        const questions = [
-            // Domain 1: Knowledge
-            { q: "المدرسة التي تركز على أن التعلم هو تغير في السلوك الظاهر نتيجة مثير واستجابة:", a: ["السلوكية", "المعرفية", "البنائية", "الإنسانية"], c: 0 },
-            { q: "من رواد النظرية الاجتماعية في التعلم:", a: ["سكينر", "بياجيه", "ألبرت باندورا", "ماسلو"], c: 2 },
-            { q: "أعلى مستوى في تصنيف بلوم للأهداف المعرفية هو:", a: ["الفهم", "التطبيق", "التحليل", "الابتكار"], c: 3 },
-            { q: "تحليل الاحتياجات التدريبية على مستوى المنظمة يركز على:", a: ["أداء الموظف", "الوصف الوظيفي", "أهداف واستراتيجية المنظمة", "رغبات المدرب"], c: 2 },
-            { q: "النظرية التي ترى أن المتعلم يبني معرفته بنفسه بناءً على خبراته السابقة:", a: ["السلوكية", "البنائية", "الاتصالية", "الاجتماعية"], c: 1 },
-            { q: "في نموذج ADDIE، الخطوة الأولى هي:", a: ["التصميم", "التطوير", "التحليل", "التقييم"], c: 2 },
-            
-            // Domain 2: Practice
-            { q: "وفقاً لمخروط الخبرة لإدجار ديل، أعلى نسبة تذكر للمعلومة تكون عبر:", a: ["القراءة", "السماع", "المشاهدة", "الممارسة العملية"], c: 3 },
-            { q: "في نموذج كولب، المرحلة التي تعبر عن 'الشعور' هي:", a: ["الخبرة المادية", "الملاحظة التأملية", "المفاهيم المجردة", "التجريب النشط"], c: 0 },
-            { q: "نموذج مكارثي (4MAT) يدمج بين نموذج كولب و:", a: ["هرم ماسلو", "فصي الدماغ", "الذكاءات المتعددة", "نظرية جانييه"], c: 1 },
-            { q: "المسؤول عن المشاعر والعواطف في نموذج الدماغ الثالوثي هو:", a: ["الدماغ الزاحف", "الدماغ الحوفي", "القشرة المخية", "المخيخ"], c: 1 },
-            { q: "السؤال 'ماذا لو؟' في نموذج مكارثي يناسب المتعلم:", a: ["التحليلي", "المنطقي", "الديناميكي (المتكيف)", "المتخيل"], c: 2 },
-            { q: "أي مما يلي يعتبر تدريباً غير متزامن؟", a: ["ورشة عمل في فندق", "بث مباشر عبر زووم", "فيديوهات مسجلة على يوتيوب", "نقاش حي"], c: 2 },
-            
-            // Domain 3: Values
-            { q: "عند استخدام صورة من الإنترنت في عرضك التقديمي، التصرف الأخلاقي هو:", a: ["استخدامها دون إشارة", "تعديلها لتصبح ملكك", "التأكد من ترخيصها وذكر المصدر", "عدم استخدام صور مطلقاً"], c: 2 },
-            { q: "القاعدة الذهبية في سرية التدريب (Vegas Rule) تعني:", a: ["ما يحدث في القاعة يبقى في القاعة", "التدريب مثل المقامرة", "المدرب هو الرابح دائماً", "لا توجد قواعد"], c: 0 },
-            { q: "من مبادئ النزاهة العلمية للمدرب:", a: ["ادعاء معرفة كل شيء", "نسب المعلومات لمصادرها الأصلية", "نسخ حقائب الآخرين", "تجاهل أسئلة المتدربين"], c: 1 },
-            { q: "المسؤولية المهنية تجاه المتدربين تتطلب:", a: ["التحيز للمتميزين", "معاملة الجميع بعدالة واحترام", "التركيز على المظهر فقط", "إضاعة الوقت في القصص"], c: 1 },
-            
-            // Domain 4: Future Skills
-            { q: "الذكاء العاطفي (EQ) يتضمن خمسة عناصر، منها:", a: ["الذكاء المنطقي", "الوعي بالذات", "الذاكرة القوية", "القدرة الحسابية"], c: 1 },
-            { q: "في استراتيجية سكامبر (SCAMPER)، الحرف S يرمز إلى:", a: ["الدمج (Combine)", "الاستبدال (Substitute)", "الحذف (Eliminate)", "العكس (Reverse)"], c: 1 },
-            { q: "القبعة الحمراء في قبعات التفكير الست ترمز إلى:", a: ["الحقائق والأرقام", "المشاعر والحدس", "المخاطر والحذر", "الإبداع والابتكار"], c: 1 },
-            { q: "القبعة التي تستخدم للتفكير في الحقائق والمعلومات المجردة هي:", a: ["البيضاء", "السوداء", "الصفراء", "الزرقاء"], c: 0 },
-            { q: "معادلة العائد على الاستثمار (ROI) في التدريب هي:", a: ["التكلفة / العائد", "(صافي العائد / التكلفة) × 100", "عدد المتدربين × الساعات", "درجات الاختبار فقط"], c: 1 },
-            { q: "التفكير الذي يهدف لتوليد أكبر عدد ممكن من الأفكار والبدائل هو:", a: ["التفكير التقاربي", "التفكير التباعدي", "التفكير الناقد", "التفكير المنطقي"], c: 1 },
-            { q: "من مهارات المدرب الرقمي إتقان:", a: ["صيانة الحاسب", "إدارة منصات التعلم (LMS)", "البرمجة المعقدة", "شبكات الاتصال"], c: 1 },
-            { q: "قاعدة ميهرابيان في الاتصال تشير إلى أن تأثير لغة الجسد يعادل:", a: ["7%", "38%", "55%", "90%"], c: 2 },
-            { q: "القدرة على التحكم في الانفعالات وتوجيهها تسمى:", a: ["الوعي بالذات", "إدارة الذات", "التعاطف", "المهارات الاجتماعية"], c: 1 }
-        ];
-
+        let currentModel = 1;
         let currentQ = 0;
         let score = 0;
 
-        function startQuiz() {
-            document.getElementById('quiz-start').classList.add('hidden');
-            document.getElementById('quiz-container').classList.remove('hidden');
+        function startQuiz(modelId) {
+            currentModel = modelId;
+            const modelNames = {1: "النموذج الأول (متقدم)", 2: "النموذج الثاني (خبير)", 3: "النموذج الثالث (مواقف)", 4: "النموذج الرابع (ماستر)"};
+            
+            document.getElementById('model-selection').classList.add('hidden');
+            document.getElementById('quiz-interface').classList.remove('hidden');
+            document.getElementById('active-model-name').innerText = modelNames[modelId];
+            
             currentQ = 0;
             score = 0;
-            updateScore();
-            renderQuestion();
+            loadQuestion();
         }
 
-        function updateScore() {
-            document.getElementById('score-display').innerText = `النتيجة: ${score}`;
-            document.getElementById('question-count').innerText = `سؤال ${currentQ + 1} من ${questions.length}`;
-            let progress = ((currentQ) / questions.length) * 100;
-            document.getElementById('progress-bar').style.width = `${progress}%`;
-        }
-
-        function renderQuestion() {
-            updateScore();
-            const q = questions[currentQ];
+        function loadQuestion() {
+            const data = quizData[currentModel];
+            const q = data[currentQ];
+            
+            // UI Updates
+            document.getElementById('question-count').innerText = `سؤال ${currentQ + 1} من ${data.length}`;
+            document.getElementById('progress-bar').style.width = `${((currentQ) / data.length) * 100}%`;
             document.getElementById('question-text').innerText = q.q;
+            document.getElementById('feedback-area').classList.add('hidden');
+            
             const container = document.getElementById('options-container');
             container.innerHTML = '';
-            document.getElementById('feedback-area').classList.add('hidden');
-
-            q.a.forEach((opt, index) => {
+            
+            q.a.forEach((opt, idx) => {
                 const btn = document.createElement('button');
-                btn.className = "option-btn w-full text-right p-4 rounded-xl border border-slate-200 bg-white font-medium mb-2";
+                btn.className = "option-btn w-full text-right p-4 rounded-xl border border-slate-200 bg-white font-medium shadow-sm";
                 btn.innerText = opt;
-                btn.onclick = () => handleAnswer(btn, index, q.c);
+                btn.onclick = () => checkQuizAnswer(btn, idx, q.c);
                 container.appendChild(btn);
             });
         }
 
-        function handleAnswer(btn, selectedIndex, correctIndex) {
+        function checkQuizAnswer(btn, userIdx, correctIdx) {
             const btns = document.querySelectorAll('.option-btn');
             btns.forEach(b => b.disabled = true);
-
+            
             const feedbackArea = document.getElementById('feedback-area');
             const feedbackText = document.getElementById('feedback-text');
             feedbackArea.classList.remove('hidden');
 
-            if (selectedIndex === correctIndex) {
+            if (userIdx === correctIdx) {
                 btn.classList.add('correct');
-                feedbackText.innerText = "✅ إجابة صحيحة! أحسنت.";
-                feedbackText.className = "text-sm font-bold text-green-700";
+                feedbackText.innerText = "✅ إجابة صحيحة!";
+                feedbackText.className = "text-sm font-bold text-green-700 mb-2";
                 score++;
             } else {
                 btn.classList.add('wrong');
-                btns[correctIndex].classList.add('correct');
-                feedbackText.innerText = "❌ إجابة خاطئة. الإجابة الصحيحة هي الموضحة باللون الأخضر.";
-                feedbackText.className = "text-sm font-bold text-red-700";
+                btns[correctIdx].classList.add('correct');
+                feedbackText.innerText = "❌ إجابة خاطئة";
+                feedbackText.className = "text-sm font-bold text-red-700 mb-2";
             }
-            updateScore();
         }
 
         function nextQuestion() {
             currentQ++;
-            if (currentQ < questions.length) {
-                renderQuestion();
+            if (currentQ < quizData[currentModel].length) {
+                loadQuestion();
             } else {
-                showResults();
+                showQuizResult();
             }
         }
 
-        function showResults() {
-            document.getElementById('quiz-container').classList.add('hidden');
-            const resultDiv = document.getElementById('quiz-result');
-            resultDiv.classList.remove('hidden');
-            
-            const finalScoreSpan = document.getElementById('final-score');
-            finalScoreSpan.innerText = score;
+        function showQuizResult() {
+            document.getElementById('quiz-interface').classList.add('hidden');
+            document.getElementById('quiz-result').classList.remove('hidden');
+            document.getElementById('final-score').innerText = score;
             
             const msgDiv = document.getElementById('result-message');
-            let percentage = (score / questions.length) * 100;
+            const percent = (score / 25) * 100;
             
-            if(percentage >= 90) {
-                msgDiv.innerHTML = "🌟 <strong>مستوى خبير!</strong> أداء استثنائي يدل على تمكنك التام من الكفايات.";
-                msgDiv.className = "text-sm text-green-800 bg-green-50 p-4 rounded-lg";
-            } else if (percentage >= 75) {
-                msgDiv.innerHTML = "👏 <strong>مستوى متقدم.</strong> لديك أساس معرفي قوي جداً.";
-                msgDiv.className = "text-sm text-blue-800 bg-blue-50 p-4 rounded-lg";
+            if (percent >= 90) {
+                msgDiv.innerHTML = "🌟 <strong>أداء مذهل!</strong> أنت تمتلك كفايات عالية جداً.";
+                msgDiv.className = "bg-green-50 text-green-800 p-4 rounded-lg mb-6";
+            } else if (percent >= 75) {
+                msgDiv.innerHTML = "👏 <strong>أداء ممتاز.</strong> لديك أساس قوي، راجع بعض النقاط.";
+                msgDiv.className = "bg-blue-50 text-blue-800 p-4 rounded-lg mb-6";
             } else {
-                msgDiv.innerHTML = "📚 <strong>بداية جيدة.</strong> ننصحك بمراجعة الدليل المرجعي مرة أخرى لتعزيز المعلومات.";
-                msgDiv.className = "text-sm text-slate-800 bg-slate-50 p-4 rounded-lg";
+                msgDiv.innerHTML = "📚 <strong>محاولة جيدة.</strong> ننصحك بالعودة للدليل المرجعي لتعزيز المعلومات.";
+                msgDiv.className = "bg-slate-50 text-slate-800 p-4 rounded-lg mb-6";
             }
+        }
+
+        function exitQuiz() {
+            document.getElementById('quiz-result').classList.add('hidden');
+            document.getElementById('quiz-interface').classList.add('hidden');
+            document.getElementById('model-selection').classList.remove('hidden');
         }
     </script>
 </body>
