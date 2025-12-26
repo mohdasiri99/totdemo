@@ -14,12 +14,10 @@
             background-color: #f8fafc;
             scroll-behavior: smooth;
         }
-        /* Navigation Active State */
         .nav-item.active {
             background-color: #0f172a;
             color: white;
         }
-        /* Hide sections by default */
         .page-section {
             display: none;
             animation: fadeIn 0.4s ease-in-out;
@@ -32,31 +30,22 @@
             to { opacity: 1; transform: translateY(0); }
         }
         /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1; 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1; 
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8; 
-        }
-        /* Domain Cards Hover */
-        .domain-card {
-            transition: all 0.3s ease;
-        }
-        .domain-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        .domain-card { transition: all 0.3s ease; }
+        .domain-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
         .cone-layer:hover { transform: scale(1.02); font-weight: bold; }
-        .hat-card { border-right-width: 6px; }
         .brain-part { transition: all 0.3s; }
         .brain-part:hover { transform: scale(1.03); }
+        
+        /* Quiz Styles */
+        .option-btn { transition: all 0.2s; }
+        .option-btn:hover:not(:disabled) { background-color: #f1f5f9; border-color: #94a3b8; }
+        .option-btn.correct { background-color: #dcfce7; border-color: #22c55e; color: #166534; }
+        .option-btn.wrong { background-color: #fee2e2; border-color: #ef4444; color: #991b1b; }
     </style>
 </head>
 <body class="text-slate-800 flex flex-col min-h-screen">
@@ -157,57 +146,36 @@
                     <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-xl flex items-center justify-center text-2xl font-bold">1</div>
                     <h2 class="text-2xl font-bold text-blue-800">المعرفة المهنية ونظريات التعلم</h2>
                 </div>
-                
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                    <!-- School 1 -->
                     <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-blue-500 domain-card">
                         <h3 class="font-bold text-lg mb-2 text-blue-800">1. المدرسة السلوكية</h3>
                         <p class="text-xs text-gray-500 mb-2">بافلوف، سكينر</p>
-                        <p class="text-sm text-slate-600">التعلم = تغير في السلوك نتيجة (مثير + استجابة + تعزيز).</p>
+                        <p class="text-sm text-slate-600">التعلم = تغير في السلوك نتيجة (مثير + استجابة + تعزيز). التطبيق: التكرار والمكافآت.</p>
                     </div>
-                    <!-- School 2 -->
                     <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-indigo-500 domain-card">
                         <h3 class="font-bold text-lg mb-2 text-indigo-800">2. المدرسة المعرفية</h3>
                         <p class="text-xs text-gray-500 mb-2">بياجيه، جانييه</p>
-                        <p class="text-sm text-slate-600">التركيز على العمليات العقلية الداخلية ومعالجة المعلومات.</p>
+                        <p class="text-sm text-slate-600">التركيز على العمليات العقلية والذاكرة. التطبيق: الخرائط الذهنية.</p>
                     </div>
-                    <!-- School 3 -->
                     <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-cyan-500 domain-card">
                         <h3 class="font-bold text-lg mb-2 text-cyan-800">3. المدرسة البنائية</h3>
                         <p class="text-xs text-gray-500 mb-2">فيغوتسكي، ديوي</p>
-                        <p class="text-sm text-slate-600">المتعلم يبني معرفته بنفسه عبر الخبرة والتفاعل.</p>
+                        <p class="text-sm text-slate-600">المتعلم يبني معرفته بنفسه عبر الخبرة. التطبيق: المشاريع وحل المشكلات.</p>
                     </div>
-                    <!-- School 4 -->
                     <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-teal-500 domain-card">
                         <h3 class="font-bold text-lg mb-2 text-teal-800">4. المدرسة الاجتماعية</h3>
                         <p class="text-xs text-gray-500 mb-2">ألبرت باندورا</p>
-                        <p class="text-sm text-slate-600">التعلم بالملاحظة والنمذجة (القدوة) في سياق اجتماعي.</p>
+                        <p class="text-sm text-slate-600">التعلم بالملاحظة والنمذجة (القدوة). التطبيق: البيان العملي (Demo).</p>
                     </div>
-                    <!-- School 5 -->
                     <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-rose-400 domain-card">
                         <h3 class="font-bold text-lg mb-2 text-rose-800">5. المدرسة الإنسانية</h3>
                         <p class="text-xs text-gray-500 mb-2">ماسلو، روجرز</p>
-                        <p class="text-sm text-slate-600">التركيز على تحقيق الذات، والمشاعر، والبيئة الآمنة.</p>
+                        <p class="text-sm text-slate-600">التركيز على تحقيق الذات والمشاعر. التطبيق: البيئة الآمنة والتحفيز.</p>
                     </div>
-                    <!-- School 6 -->
                     <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-slate-600 domain-card">
                         <h3 class="font-bold text-lg mb-2 text-slate-800">6. المدرسة الاتصالية</h3>
                         <p class="text-xs text-gray-500 mb-2">جورج سيمنز</p>
-                        <p class="text-sm text-slate-600">التعلم هو عملية ربط بين مصادر المعلومات في العصر الرقمي.</p>
-                    </div>
-                </div>
-
-                <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100">
-                    <h3 class="font-bold text-blue-900 mb-3">مفاهيم جوهرية</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                        <div>
-                            <strong class="block text-blue-800">تحليل الاحتياجات (TNA):</strong>
-                            <span class="text-slate-600">تحديد الفجوة بين الأداء الحالي والمأمول (مؤسسي، وظيفي، فردي).</span>
-                        </div>
-                        <div>
-                            <strong class="block text-blue-800">هرم بلوم (Bloom's Taxonomy):</strong>
-                            <span class="text-slate-600">تدرج الأهداف: تذكر ⬅ فهم ⬅ تطبيق ⬅ تحليل ⬅ تقويم ⬅ ابتكار.</span>
-                        </div>
+                        <p class="text-sm text-slate-600">التعلم هو ربط مصادر المعلومات. التطبيق: التعلم الرقمي.</p>
                     </div>
                 </div>
             </div>
@@ -218,80 +186,30 @@
                     <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center text-2xl font-bold">2</div>
                     <h2 class="text-2xl font-bold text-emerald-800">الممارسة ونماذج التدريب</h2>
                 </div>
-                
-                <!-- Brain Theories -->
-                <div class="mb-8 bg-white p-6 rounded-2xl border border-emerald-100 shadow-sm">
-                    <h4 class="font-bold text-slate-800 mb-4 border-b pb-2">نظريات الدماغ والتعلم</h4>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <strong class="text-emerald-700 block mb-1">الدماغ الثالوثي (MacLean):</strong>
-                            <ul class="text-sm text-slate-600 list-disc list-inside">
-                                <li>الزاحف (بقاء وأمان)</li>
-                                <li>الحوفي (مشاعر)</li>
-                                <li>القشرة المخية (تفكير ومنطق)</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <strong class="text-emerald-700 block mb-1">فصي الدماغ (Sperry):</strong>
-                            <div class="flex gap-2 text-xs text-center mt-2">
-                                <span class="flex-1 bg-gray-100 p-2 rounded">الأيسر (منطق/أرقام)</span>
-                                <span class="flex-1 bg-emerald-100 p-2 rounded">الأيمن (خيال/إبداع)</span>
-                            </div>
-                        </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-xl border border-emerald-100 shadow-sm">
+                        <h4 class="font-bold text-slate-800 mb-3">نظريات الدماغ</h4>
+                        <ul class="text-sm text-slate-600 space-y-2">
+                            <li><strong>الدماغ الثالوثي (MacLean):</strong> زاحف (بقاء)، حوفي (مشاعر)، قشرة (تفكير).</li>
+                            <li><strong>فصي الدماغ (Sperry):</strong> أيسر (منطق/لغة)، أيمن (إبداع/صور).</li>
+                        </ul>
                     </div>
-                </div>
-
-                <!-- Learning Styles -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-                    <div class="bg-emerald-50 p-6 rounded-2xl border border-emerald-200">
-                        <h4 class="font-bold text-emerald-900 mb-3">نموذج كولب (Kolb)</h4>
-                        <p class="text-xs text-emerald-800 mb-3">دورة التعلم الرباعية:</p>
-                        <div class="grid grid-cols-2 gap-2 text-xs text-center">
-                            <div class="bg-white p-2 rounded shadow-sm font-bold text-emerald-700">1. شعور (خبرة)</div>
-                            <div class="bg-white p-2 rounded shadow-sm font-bold text-emerald-700">2. مشاهدة (تأمل)</div>
-                            <div class="bg-white p-2 rounded shadow-sm font-bold text-emerald-700">3. تفكير (مفاهيم)</div>
-                            <div class="bg-white p-2 rounded shadow-sm font-bold text-emerald-700">4. عمل (تجريب)</div>
-                        </div>
-                    </div>
-                    <div class="bg-amber-50 p-6 rounded-2xl border border-amber-200">
-                        <h4 class="font-bold text-amber-900 mb-3">نموذج مكارثي (4MAT)</h4>
-                        <ul class="text-sm text-amber-900 space-y-2">
-                            <li class="flex items-center gap-2"><span class="bg-white px-2 py-1 rounded text-xs font-bold shadow-sm">لماذا؟</span> (المعنى والقيمة)</li>
-                            <li class="flex items-center gap-2"><span class="bg-white px-2 py-1 rounded text-xs font-bold shadow-sm">ماذا؟</span> (المفاهيم والحقائق)</li>
-                            <li class="flex items-center gap-2"><span class="bg-white px-2 py-1 rounded text-xs font-bold shadow-sm">كيف؟</span> (المهارات والتجريب)</li>
-                            <li class="flex items-center gap-2"><span class="bg-white px-2 py-1 rounded text-xs font-bold shadow-sm">ماذا لو؟</span> (التكييف والإبداع)</li>
+                    <div class="bg-white p-6 rounded-xl border border-emerald-100 shadow-sm">
+                        <h4 class="font-bold text-slate-800 mb-3">أنماط التعلم (Kolb & McCarthy)</h4>
+                        <ul class="text-sm text-slate-600 space-y-2">
+                            <li><strong>كولب:</strong> خبرة مادية ⬅ ملاحظة ⬅ مفاهيم ⬅ تجريب.</li>
+                            <li><strong>مكارثي (4MAT):</strong> لماذا؟ ⬅ ماذا؟ ⬅ كيف؟ ⬅ ماذا لو؟</li>
                         </ul>
                     </div>
                 </div>
-
-                <!-- Instructional Design -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <div class="bg-white p-6 rounded-xl border-t-4 border-blue-600 shadow-sm">
-                        <h4 class="font-bold text-slate-800 mb-2">نموذج ADDIE</h4>
-                        <p class="text-xs text-slate-500 mb-3">النموذج العام لتصميم النظم:</p>
-                        <div class="flex flex-wrap gap-1 text-[10px] font-bold text-white">
-                            <span class="bg-blue-600 px-2 py-1 rounded">تحليل</span>
-                            <span class="bg-blue-600 px-2 py-1 rounded">تصميم</span>
-                            <span class="bg-blue-600 px-2 py-1 rounded">تطوير</span>
-                            <span class="bg-blue-600 px-2 py-1 rounded">تنفيذ</span>
-                            <span class="bg-blue-600 px-2 py-1 rounded">تقويم</span>
-                        </div>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl border-t-4 border-purple-600 shadow-sm">
-                        <h4 class="font-bold text-slate-800 mb-2">نموذج كيمب (Kemp)</h4>
-                        <p class="text-xs text-slate-500">يتميز بالمرونة والشكل الدائري، ويتكون من 9 خطوات تركز على خصائص المتعلمين والمشاكل التعليمية.</p>
-                    </div>
-                </div>
-
-                <!-- Dale's Cone -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <h4 class="font-bold text-slate-800 mb-4 text-center">مخروط الخبرة (Edgar Dale)</h4>
-                    <div class="w-full max-w-md mx-auto space-y-1 text-center text-white text-xs font-bold">
-                        <div class="bg-slate-300 py-1 w-[30%] mx-auto rounded-t text-slate-800 cone-layer">قراءة 10%</div>
-                        <div class="bg-slate-400 py-1 w-[45%] mx-auto text-slate-800 cone-layer">سماع 20%</div>
-                        <div class="bg-slate-500 py-1 w-[60%] mx-auto cone-layer">مشاهدة 30%</div>
-                        <div class="bg-blue-600 py-2 w-[80%] mx-auto shadow-md cone-layer">مناقشة 70%</div>
-                        <div class="bg-emerald-600 py-3 w-[100%] mx-auto shadow-md cone-layer">ممارسة 90%</div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm mb-8 text-center">
+                    <h4 class="font-bold text-slate-800 mb-4">مخروط الخبرة (Edgar Dale)</h4>
+                    <div class="flex justify-center flex-wrap gap-2 text-xs font-bold text-white">
+                        <span class="bg-slate-400 px-3 py-1 rounded">قراءة 10%</span>
+                        <span class="bg-slate-500 px-3 py-1 rounded">سماع 20%</span>
+                        <span class="bg-slate-600 px-3 py-1 rounded">مشاهدة 30%</span>
+                        <span class="bg-blue-600 px-3 py-1 rounded">نقاش 70%</span>
+                        <span class="bg-emerald-600 px-3 py-1 rounded">ممارسة 90%</span>
                     </div>
                 </div>
             </div>
@@ -302,25 +220,14 @@
                     <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center text-2xl font-bold">3</div>
                     <h2 class="text-2xl font-bold text-amber-800">القيم والمسؤوليات المهنية</h2>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-amber-50 p-6 rounded-2xl border border-amber-200">
-                        <h3 class="font-bold text-amber-900 mb-3">⚖️ ميثاق الشرف التدريبي</h3>
-                        <ul class="text-sm text-amber-800 space-y-2 list-disc list-inside">
-                            <li><strong>النزاهة العلمية:</strong> نسب المعلومات لأصحابها.</li>
-                            <li><strong>السرية:</strong> ما يدور في القاعة يظل في القاعة.</li>
-                            <li><strong>الحيادية:</strong> عدم التحيز أو استغلال المنصة.</li>
-                            <li><strong>احترام الوقت:</strong> البدء والانتهاء في الموعد.</li>
-                        </ul>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                        <h3 class="font-bold text-slate-800 mb-3">©️ الملكية الفكرية</h3>
-                        <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside">
-                            <li>استخدام صور مرخصة (Creative Commons).</li>
-                            <li>الاقتباس العادل مسموح للأغراض التعليمية.</li>
-                            <li>عدم نسخ الحقائب التدريبية الكاملة للغير.</li>
-                        </ul>
-                    </div>
+                <div class="bg-amber-50 p-6 rounded-2xl border border-amber-200">
+                    <h3 class="font-bold text-amber-900 mb-3">أخلاقيات المهنة</h3>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-amber-800 list-disc list-inside">
+                        <li><strong>النزاهة العلمية:</strong> نسب المعلومات لأصحابها.</li>
+                        <li><strong>السرية:</strong> حفظ أسرار المتدربين والمؤسسة.</li>
+                        <li><strong>الملكية الفكرية:</strong> استخدام محتوى مرخص واحترام حقوق الغير.</li>
+                        <li><strong>الحيادية:</strong> عدم التحيز أو استغلال المنصة لأغراض شخصية.</li>
+                    </ul>
                 </div>
             </div>
 
@@ -328,130 +235,114 @@
             <div id="domain4" class="mb-20 scroll-mt-36">
                 <div class="flex items-center gap-4 mb-6">
                     <div class="w-12 h-12 bg-rose-100 text-rose-700 rounded-xl flex items-center justify-center text-2xl font-bold">4</div>
-                    <h2 class="text-2xl font-bold text-rose-800">مهارات المستقبل والكفايات</h2>
+                    <h2 class="text-2xl font-bold text-rose-800">مهارات المستقبل</h2>
                 </div>
-
-                <!-- EQ -->
-                <div class="mb-8">
-                    <h3 class="font-bold text-slate-800 mb-4">🧠 الذكاء العاطفي (Goleman)</h3>
-                    <div class="grid grid-cols-2 md:grid-cols-5 gap-3 text-center text-xs">
-                        <div class="bg-rose-50 p-3 rounded-lg border border-rose-200"><span class="block text-xl mb-1">🪞</span>الوعي بالذات</div>
-                        <div class="bg-rose-50 p-3 rounded-lg border border-rose-200"><span class="block text-xl mb-1">🎮</span>إدارة الذات</div>
-                        <div class="bg-rose-50 p-3 rounded-lg border border-rose-200"><span class="block text-xl mb-1">🔥</span>التحفيز الذاتي</div>
-                        <div class="bg-rose-50 p-3 rounded-lg border border-rose-200"><span class="block text-xl mb-1">❤️</span>التعاطف</div>
-                        <div class="bg-rose-50 p-3 rounded-lg border border-rose-200"><span class="block text-xl mb-1">🤝</span>المهارات الاجتماعية</div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-rose-50 p-5 rounded-xl border border-rose-200">
+                        <strong class="block text-rose-900 mb-2">الذكاء العاطفي (EQ)</strong>
+                        <p class="text-xs text-rose-800">وعي بالذات، إدارة الذات، تحفيز، تعاطف، مهارات اجتماعية.</p>
                     </div>
-                </div>
-
-                <!-- Creative Thinking -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-                    <div class="bg-indigo-50 p-6 rounded-2xl border border-indigo-200">
-                        <h4 class="font-bold text-indigo-900 mb-3">أدوات التفكير الإبداعي</h4>
-                        <ul class="text-sm text-indigo-800 space-y-2">
-                            <li><strong>سكامبر (SCAMPER):</strong> (استبدال، دمج، تكييف، تعديل، استخدام آخر، حذف، عكس).</li>
-                            <li><strong>الكورت (CoRT):</strong> تعليم التفكير كمهارة (توسيع الإدراك).</li>
-                            <li><strong>القبعات الست:</strong> (بيضاء: حقائق، حمراء: مشاعر، سوداء: حذر، صفراء: تفاؤل، خضراء: إبداع، زرقاء: تحكم).</li>
-                        </ul>
+                    <div class="bg-indigo-50 p-5 rounded-xl border border-indigo-200">
+                        <strong class="block text-indigo-900 mb-2">التفكير الإبداعي</strong>
+                        <p class="text-xs text-indigo-800">سكامبر، القبعات الست، الكورت، التفكير التباعدي.</p>
                     </div>
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                        <h4 class="font-bold text-slate-800 mb-3">أنواع التفكير</h4>
-                        <ul class="text-sm text-slate-600 space-y-2">
-                            <li><strong>التباعدي:</strong> توليد خيارات متعددة (عصف ذهني).</li>
-                            <li><strong>التقاربي:</strong> اختيار الحل الأمثل.</li>
-                            <li><strong>الناقد:</strong> فحص المعلومات وكشف المغالطات.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Soft Skills & KPI -->
-                <div class="bg-teal-50 p-6 rounded-2xl border border-teal-200">
-                    <h4 class="font-bold text-teal-900 mb-3">الإدارة والتخطيط</h4>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-teal-800">
-                        <div>
-                            <strong>مؤشرات الأداء (KPIs):</strong>
-                            <ul class="list-disc list-inside mt-1">
-                                <li>نسبة الرضا.</li>
-                                <li>معدل الإتمام.</li>
-                                <li>العائد على الاستثمار (ROI).</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <strong>حل المشكلات:</strong>
-                            <ul class="list-disc list-inside mt-1">
-                                <li>تحديد المشكلة.</li>
-                                <li>تحليل الأسباب (عظمة السمكة).</li>
-                                <li>توليد الحلول.</li>
-                            </ul>
-                        </div>
+                    <div class="bg-teal-50 p-5 rounded-xl border border-teal-200">
+                        <strong class="block text-teal-900 mb-2">التخطيط و KPIs</strong>
+                        <p class="text-xs text-teal-800">تخطيط استراتيجي/تنفيذي، وقياس العائد (ROI).</p>
                     </div>
                 </div>
             </div>
         </section>
 
 
-        <!-- PAGE 2: VIDEOS -->
+        <!-- PAGE 2: VIDEOS (UPDATED WITH LINKS) -->
         <section id="videos" class="page-section">
-            <h2 class="text-3xl font-black text-slate-900 mb-8 border-b pb-4">مكتبة المرئيات التدريبية</h2>
+            <h2 class="text-3xl font-black text-slate-900 mb-8 border-b pb-4">مكتبة المرئيات (الرخصة المهنية)</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Video Card 1 -->
+                <!-- Video 1 -->
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100">
-                    <div class="aspect-w-16 aspect-h-9 bg-slate-200 relative group h-48 flex items-center justify-center">
-                        <i class="fa-brands fa-youtube text-6xl text-slate-400 group-hover:text-red-600 transition"></i>
+                    <div class="aspect-w-16 aspect-h-9 relative group">
+                        <iframe class="w-full h-56" src="https://www.youtube.com/embed/IMoimtUXZcM" title="الرخصة المهنية للمدربين - اليوم الأول" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                     <div class="p-4">
-                        <h3 class="font-bold text-lg mb-2">كيف تكسر الجليد في أول 5 دقائق؟</h3>
-                        <p class="text-sm text-slate-500">تقنيات عملية لبدء دورة تدريبية ناجحة.</p>
+                        <h3 class="font-bold text-lg mb-2 text-slate-800">الرخصة المهنية للمدربين - اليوم الأول</h3>
+                        <p class="text-sm text-slate-500">أساسيات التدريب ونظريات التعلم.</p>
                     </div>
                 </div>
-                <!-- Video Card 2 -->
+
+                <!-- Video 2 -->
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100">
-                    <div class="aspect-w-16 aspect-h-9 bg-slate-200 relative group h-48 flex items-center justify-center">
-                        <i class="fa-brands fa-youtube text-6xl text-slate-400 group-hover:text-red-600 transition"></i>
+                    <div class="aspect-w-16 aspect-h-9 relative group">
+                        <iframe class="w-full h-56" src="https://www.youtube.com/embed/AsZPzSXoDvU" title="الرخصة المهنية للمدربين - اليوم الثاني" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                     <div class="p-4">
-                        <h3 class="font-bold text-lg mb-2">لغة الجسد للمدرب المحترف</h3>
-                        <p class="text-sm text-slate-500">استخدام الصوت والحركة للتأثير.</p>
+                        <h3 class="font-bold text-lg mb-2 text-slate-800">الرخصة المهنية للمدربين - اليوم الثاني</h3>
+                        <p class="text-sm text-slate-500">تصميم الحقائب وأساليب التدريب.</p>
                     </div>
                 </div>
-                <!-- Video Card 3 -->
+
+                <!-- Video 3 -->
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100">
-                    <div class="aspect-w-16 aspect-h-9 bg-slate-200 relative group h-48 flex items-center justify-center">
-                        <i class="fa-brands fa-youtube text-6xl text-slate-400 group-hover:text-red-600 transition"></i>
+                    <div class="aspect-w-16 aspect-h-9 relative group">
+                        <iframe class="w-full h-56" src="https://www.youtube.com/embed/VICfHGd1qUQ" title="الرخصة المهنية للمدربين - اليوم الثالث" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                     <div class="p-4">
-                        <h3 class="font-bold text-lg mb-2">شرح نموذج ADDIE</h3>
-                        <p class="text-sm text-slate-500">دليل مبسط للتصميم التعليمي.</p>
+                        <h3 class="font-bold text-lg mb-2 text-slate-800">الرخصة المهنية للمدربين - اليوم الثالث</h3>
+                        <p class="text-sm text-slate-500">مهارات العرض والإلقاء والتقييم.</p>
                     </div>
                 </div>
             </div>
         </section>
 
 
-        <!-- PAGE 3: SIMULATED TESTS -->
+        <!-- PAGE 3: SIMULATED TESTS (UPDATED 25 QUESTIONS) -->
         <section id="tests" class="page-section">
-            <h2 class="text-3xl font-black text-slate-900 mb-8 border-b pb-4">اختبارات الرخصة المهنية (محاكاة)</h2>
+            <h2 class="text-3xl font-black text-slate-900 mb-8 border-b pb-4">اختبارات الرخصة المهنية (25 سؤالاً)</h2>
             
-            <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 max-w-3xl mx-auto">
-                <div id="quiz-container">
-                    <!-- Question 1 -->
-                    <div class="quiz-step active" id="q1">
-                        <div class="flex justify-between items-center mb-6">
-                            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">سؤال 1 من 3</span>
-                            <span class="text-slate-400 text-sm">المجال: نظريات التعلم</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-800 mb-6">أي المدارس التالية تركز على أن "التعلم يحدث نتيجة مثير واستجابة وتعزيز"؟</h3>
-                        <div class="space-y-3">
-                            <button onclick="checkAnswer(this, 'correct')" class="w-full text-right p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition">أ. المدرسة السلوكية</button>
-                            <button onclick="checkAnswer(this, 'wrong')" class="w-full text-right p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition">ب. المدرسة المعرفية</button>
-                            <button onclick="checkAnswer(this, 'wrong')" class="w-full text-right p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition">ج. المدرسة البنائية</button>
-                            <button onclick="checkAnswer(this, 'wrong')" class="w-full text-right p-4 rounded-xl border border-slate-200 hover:bg-slate-50 transition">د. المدرسة الإنسانية</button>
-                        </div>
-                        <div class="hidden mt-4 p-4 rounded-lg bg-green-50 text-green-800 feedback">
-                            <i class="fa-solid fa-check-circle ml-2"></i> <strong>إجابة صحيحة!</strong> المدرسة السلوكية (سكينر وبافلوف) هي التي تعتمد على مبدأ المثير والاستجابة.
-                        </div>
+            <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 max-w-4xl mx-auto">
+                
+                <!-- Start Screen -->
+                <div id="quiz-start" class="text-center py-10">
+                    <div class="text-6xl mb-4">📝</div>
+                    <h3 class="text-2xl font-bold mb-4">اختبار محاكاة شامل</h3>
+                    <p class="text-slate-600 mb-8">يتكون هذا الاختبار من 25 سؤالاً تغطي كافة مجالات الرخصة المهنية للمدربين (المعرفة، الممارسة، القيم، المهارات). هل أنت مستعد؟</p>
+                    <button onclick="startQuiz()" class="bg-slate-900 text-white px-8 py-3 rounded-xl font-bold hover:bg-slate-800 transition">ابدأ الاختبار الآن</button>
+                </div>
+
+                <!-- Quiz Container -->
+                <div id="quiz-container" class="hidden">
+                    <!-- Progress Bar -->
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mb-6">
+                        <div id="progress-bar" class="bg-blue-600 h-2.5 rounded-full" style="width: 0%"></div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center mb-6">
+                        <span id="question-count" class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">سؤال 1 من 25</span>
+                        <span id="score-display" class="text-slate-500 text-sm font-bold">النتيجة: 0</span>
+                    </div>
+
+                    <h3 id="question-text" class="text-xl font-bold text-slate-800 mb-6 leading-relaxed">نص السؤال يظهر هنا...</h3>
+                    
+                    <div id="options-container" class="space-y-3">
+                        <!-- Options will be injected here -->
+                    </div>
+
+                    <div id="feedback-area" class="hidden mt-6 p-4 rounded-lg bg-gray-50 border border-gray-200">
+                        <p id="feedback-text" class="text-sm font-bold"></p>
+                        <button onclick="nextQuestion()" class="mt-4 bg-slate-900 text-white px-6 py-2 rounded-lg text-sm hover:bg-slate-800">السؤال التالي <i class="fa-solid fa-arrow-left mr-1"></i></button>
                     </div>
                 </div>
+
+                <!-- Result Screen -->
+                <div id="quiz-result" class="hidden text-center py-10">
+                    <div id="result-icon" class="text-6xl mb-4">🏆</div>
+                    <h3 class="text-2xl font-bold mb-2">أتممت الاختبار بنجاح!</h3>
+                    <p class="text-lg text-slate-600 mb-6">نتيجتك النهائية: <span id="final-score" class="font-bold text-blue-600 text-2xl">0</span> / 25</p>
+                    <div id="result-message" class="text-sm text-slate-500 mb-8 bg-slate-50 p-4 rounded-lg"></div>
+                    <button onclick="location.reload()" class="bg-slate-900 text-white px-8 py-3 rounded-xl font-bold hover:bg-slate-800 transition">إعادة الاختبار</button>
+                </div>
+
             </div>
         </section>
 
@@ -459,7 +350,6 @@
         <!-- PAGE 4: COURSES -->
         <section id="courses" class="page-section">
             <h2 class="text-3xl font-black text-slate-900 mb-8 border-b pb-4">الدورات التدريبية المتاحة</h2>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Course 1 -->
                 <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden domain-card flex flex-col">
@@ -469,7 +359,7 @@
                     <div class="p-6 flex-grow">
                         <div class="text-xs font-bold text-blue-600 mb-2 uppercase">مستوى تأسيسي</div>
                         <h3 class="text-xl font-bold text-slate-900 mb-2">دورة تدريب المدربين (TOT)</h3>
-                        <p class="text-sm text-slate-500 mb-4">الدورة الأساسية للحصول على الرخصة المهنية.</p>
+                        <p class="text-sm text-slate-500 mb-4">الدورة الأساسية للحصول على الرخصة المهنية واحتراف الوقوف أمام الجمهور.</p>
                         <ul class="text-xs text-slate-500 space-y-1 mb-6">
                             <li><i class="fa-solid fa-clock ml-2"></i> 50 ساعة تدريبية</li>
                             <li><i class="fa-solid fa-certificate ml-2"></i> شهادة معتمدة</li>
@@ -479,7 +369,6 @@
                         <button class="w-full bg-slate-900 text-white font-bold py-3 rounded-xl hover:bg-slate-800 transition">سجل الآن</button>
                     </div>
                 </div>
-
                 <!-- Course 2 -->
                 <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden domain-card flex flex-col">
                     <div class="h-40 bg-emerald-600 flex items-center justify-center">
@@ -487,8 +376,8 @@
                     </div>
                     <div class="p-6 flex-grow">
                         <div class="text-xs font-bold text-emerald-600 mb-2 uppercase">مستوى متقدم</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">أخصائي تصميم حقائب</h3>
-                        <p class="text-sm text-slate-500 mb-4">احتراف استخدام نموذج ADDIE.</p>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">أخصائي تصميم حقائب تدريبية</h3>
+                        <p class="text-sm text-slate-500 mb-4">احتراف استخدام نموذج ADDIE وتصميم الحقائب وفق معايير الجودة.</p>
                         <ul class="text-xs text-slate-500 space-y-1 mb-6">
                             <li><i class="fa-solid fa-clock ml-2"></i> 25 ساعة تدريبية</li>
                             <li><i class="fa-solid fa-file-pdf ml-2"></i> نماذج جاهزة</li>
@@ -498,7 +387,6 @@
                         <button class="w-full bg-slate-900 text-white font-bold py-3 rounded-xl hover:bg-slate-800 transition">سجل الآن</button>
                     </div>
                 </div>
-
                 <!-- Course 3 -->
                 <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden domain-card flex flex-col">
                     <div class="h-40 bg-purple-600 flex items-center justify-center">
@@ -507,7 +395,7 @@
                     <div class="p-6 flex-grow">
                         <div class="text-xs font-bold text-purple-600 mb-2 uppercase">مستوى إداري</div>
                         <h3 class="text-xl font-bold text-slate-900 mb-2">قياس العائد على التدريب (ROI)</h3>
-                        <p class="text-sm text-slate-500 mb-4">منهجية جاك فيليبس.</p>
+                        <p class="text-sm text-slate-500 mb-4">كيف تقيس أثر التدريب مالياً وإدارياً باستخدام منهجية جاك فيليبس.</p>
                         <ul class="text-xs text-slate-500 space-y-1 mb-6">
                             <li><i class="fa-solid fa-clock ml-2"></i> 15 ساعة تدريبية</li>
                             <li><i class="fa-solid fa-calculator ml-2"></i> أدوات قياس</li>
@@ -524,12 +412,10 @@
         <!-- PAGE 5: CONTACT -->
         <section id="contact" class="page-section">
             <h2 class="text-3xl font-black text-slate-900 mb-8 border-b pb-4">اتصل بنا</h2>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
                     <h3 class="text-xl font-bold text-slate-800 mb-4">لنتواصل سوياً</h3>
-                    <p class="text-slate-600 mb-8">يسعدنا استقبال استفساراتكم حول الدورات، أو طلب استشارات.</p>
-                    
+                    <p class="text-slate-600 mb-8">يسعدنا استقبال استفساراتكم حول الدورات، أو طلب استشارات في مجال تطوير الأداء والتدريب.</p>
                     <div class="space-y-6">
                         <div class="flex items-center gap-4">
                             <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 text-xl">
@@ -560,7 +446,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
                     <form onsubmit="event.preventDefault(); alert('تم إرسال رسالتك بنجاح!');">
                         <div class="mb-4">
@@ -594,24 +479,21 @@
             </div>
             <p class="text-slate-400 text-sm mb-4">جميع الحقوق محفوظة © محمد علي عسيري 2025</p>
             <div class="flex justify-center gap-4 text-slate-400">
-                <a href="#" class="hover:text-slate-800"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://x.com/mohdasiri99" class="hover:text-slate-800"><i class="fa-brands fa-twitter"></i></a>
                 <a href="#" class="hover:text-slate-800"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="#" class="hover:text-slate-800"><i class="fa-brands fa-youtube"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript for SPA Logic -->
+    <!-- JavaScript for SPA & Quiz -->
     <script>
+        // --- 1. SPA Navigation Logic ---
         function switchPage(pageId) {
             const sections = document.querySelectorAll('.page-section');
             sections.forEach(section => section.classList.remove('active'));
-
-            const targetSection = document.getElementById(pageId);
-            if (targetSection) {
-                targetSection.classList.add('active');
-                window.scrollTo(0, 0);
-            }
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo(0, 0);
 
             const navItems = document.querySelectorAll('.nav-item');
             navItems.forEach(item => item.classList.remove('active'));
@@ -625,25 +507,133 @@
         }
 
         function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         }
 
-        function checkAnswer(btn, type) {
-            const parent = btn.parentElement;
-            const buttons = parent.querySelectorAll('button');
-            const feedback = parent.parentElement.querySelector('.feedback');
-            buttons.forEach(b => {
-                b.disabled = true;
-                if (b === btn) {
-                    if (type === 'correct') {
-                        b.classList.add('bg-green-100', 'border-green-500', 'text-green-800');
-                        feedback.classList.remove('hidden');
-                    } else {
-                        b.classList.add('bg-red-100', 'border-red-500', 'text-red-800');
-                    }
-                }
+        // --- 2. Quiz Engine Logic ---
+        const questions = [
+            // Domain 1: Knowledge
+            { q: "المدرسة التي تركز على أن التعلم هو تغير في السلوك الظاهر نتيجة مثير واستجابة:", a: ["السلوكية", "المعرفية", "البنائية", "الإنسانية"], c: 0 },
+            { q: "من رواد النظرية الاجتماعية في التعلم:", a: ["سكينر", "بياجيه", "ألبرت باندورا", "ماسلو"], c: 2 },
+            { q: "أعلى مستوى في تصنيف بلوم للأهداف المعرفية هو:", a: ["الفهم", "التطبيق", "التحليل", "الابتكار"], c: 3 },
+            { q: "تحليل الاحتياجات التدريبية على مستوى المنظمة يركز على:", a: ["أداء الموظف", "الوصف الوظيفي", "أهداف واستراتيجية المنظمة", "رغبات المدرب"], c: 2 },
+            { q: "النظرية التي ترى أن المتعلم يبني معرفته بنفسه بناءً على خبراته السابقة:", a: ["السلوكية", "البنائية", "الاتصالية", "الاجتماعية"], c: 1 },
+            { q: "في نموذج ADDIE، الخطوة الأولى هي:", a: ["التصميم", "التطوير", "التحليل", "التقييم"], c: 2 },
+            
+            // Domain 2: Practice
+            { q: "وفقاً لمخروط الخبرة لإدجار ديل، أعلى نسبة تذكر للمعلومة تكون عبر:", a: ["القراءة", "السماع", "المشاهدة", "الممارسة العملية"], c: 3 },
+            { q: "في نموذج كولب، المرحلة التي تعبر عن 'الشعور' هي:", a: ["الخبرة المادية", "الملاحظة التأملية", "المفاهيم المجردة", "التجريب النشط"], c: 0 },
+            { q: "نموذج مكارثي (4MAT) يدمج بين نموذج كولب و:", a: ["هرم ماسلو", "فصي الدماغ", "الذكاءات المتعددة", "نظرية جانييه"], c: 1 },
+            { q: "المسؤول عن المشاعر والعواطف في نموذج الدماغ الثالوثي هو:", a: ["الدماغ الزاحف", "الدماغ الحوفي", "القشرة المخية", "المخيخ"], c: 1 },
+            { q: "السؤال 'ماذا لو؟' في نموذج مكارثي يناسب المتعلم:", a: ["التحليلي", "المنطقي", "الديناميكي (المتكيف)", "المتخيل"], c: 2 },
+            { q: "أي مما يلي يعتبر تدريباً غير متزامن؟", a: ["ورشة عمل في فندق", "بث مباشر عبر زووم", "فيديوهات مسجلة على يوتيوب", "نقاش حي"], c: 2 },
+            
+            // Domain 3: Values
+            { q: "عند استخدام صورة من الإنترنت في عرضك التقديمي، التصرف الأخلاقي هو:", a: ["استخدامها دون إشارة", "تعديلها لتصبح ملكك", "التأكد من ترخيصها وذكر المصدر", "عدم استخدام صور مطلقاً"], c: 2 },
+            { q: "القاعدة الذهبية في سرية التدريب (Vegas Rule) تعني:", a: ["ما يحدث في القاعة يبقى في القاعة", "التدريب مثل المقامرة", "المدرب هو الرابح دائماً", "لا توجد قواعد"], c: 0 },
+            { q: "من مبادئ النزاهة العلمية للمدرب:", a: ["ادعاء معرفة كل شيء", "نسب المعلومات لمصادرها الأصلية", "نسخ حقائب الآخرين", "تجاهل أسئلة المتدربين"], c: 1 },
+            { q: "المسؤولية المهنية تجاه المتدربين تتطلب:", a: ["التحيز للمتميزين", "معاملة الجميع بعدالة واحترام", "التركيز على المظهر فقط", "إضاعة الوقت في القصص"], c: 1 },
+            
+            // Domain 4: Future Skills
+            { q: "الذكاء العاطفي (EQ) يتضمن خمسة عناصر، منها:", a: ["الذكاء المنطقي", "الوعي بالذات", "الذاكرة القوية", "القدرة الحسابية"], c: 1 },
+            { q: "في استراتيجية سكامبر (SCAMPER)، الحرف S يرمز إلى:", a: ["الدمج (Combine)", "الاستبدال (Substitute)", "الحذف (Eliminate)", "العكس (Reverse)"], c: 1 },
+            { q: "القبعة الحمراء في قبعات التفكير الست ترمز إلى:", a: ["الحقائق والأرقام", "المشاعر والحدس", "المخاطر والحذر", "الإبداع والابتكار"], c: 1 },
+            { q: "القبعة التي تستخدم للتفكير في الحقائق والمعلومات المجردة هي:", a: ["البيضاء", "السوداء", "الصفراء", "الزرقاء"], c: 0 },
+            { q: "معادلة العائد على الاستثمار (ROI) في التدريب هي:", a: ["التكلفة / العائد", "(صافي العائد / التكلفة) × 100", "عدد المتدربين × الساعات", "درجات الاختبار فقط"], c: 1 },
+            { q: "التفكير الذي يهدف لتوليد أكبر عدد ممكن من الأفكار والبدائل هو:", a: ["التفكير التقاربي", "التفكير التباعدي", "التفكير الناقد", "التفكير المنطقي"], c: 1 },
+            { q: "من مهارات المدرب الرقمي إتقان:", a: ["صيانة الحاسب", "إدارة منصات التعلم (LMS)", "البرمجة المعقدة", "شبكات الاتصال"], c: 1 },
+            { q: "قاعدة ميهرابيان في الاتصال تشير إلى أن تأثير لغة الجسد يعادل:", a: ["7%", "38%", "55%", "90%"], c: 2 },
+            { q: "القدرة على التحكم في الانفعالات وتوجيهها تسمى:", a: ["الوعي بالذات", "إدارة الذات", "التعاطف", "المهارات الاجتماعية"], c: 1 }
+        ];
+
+        let currentQ = 0;
+        let score = 0;
+
+        function startQuiz() {
+            document.getElementById('quiz-start').classList.add('hidden');
+            document.getElementById('quiz-container').classList.remove('hidden');
+            currentQ = 0;
+            score = 0;
+            updateScore();
+            renderQuestion();
+        }
+
+        function updateScore() {
+            document.getElementById('score-display').innerText = `النتيجة: ${score}`;
+            document.getElementById('question-count').innerText = `سؤال ${currentQ + 1} من ${questions.length}`;
+            let progress = ((currentQ) / questions.length) * 100;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+        }
+
+        function renderQuestion() {
+            updateScore();
+            const q = questions[currentQ];
+            document.getElementById('question-text').innerText = q.q;
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+            document.getElementById('feedback-area').classList.add('hidden');
+
+            q.a.forEach((opt, index) => {
+                const btn = document.createElement('button');
+                btn.className = "option-btn w-full text-right p-4 rounded-xl border border-slate-200 bg-white font-medium mb-2";
+                btn.innerText = opt;
+                btn.onclick = () => handleAnswer(btn, index, q.c);
+                container.appendChild(btn);
             });
+        }
+
+        function handleAnswer(btn, selectedIndex, correctIndex) {
+            const btns = document.querySelectorAll('.option-btn');
+            btns.forEach(b => b.disabled = true);
+
+            const feedbackArea = document.getElementById('feedback-area');
+            const feedbackText = document.getElementById('feedback-text');
+            feedbackArea.classList.remove('hidden');
+
+            if (selectedIndex === correctIndex) {
+                btn.classList.add('correct');
+                feedbackText.innerText = "✅ إجابة صحيحة! أحسنت.";
+                feedbackText.className = "text-sm font-bold text-green-700";
+                score++;
+            } else {
+                btn.classList.add('wrong');
+                btns[correctIndex].classList.add('correct');
+                feedbackText.innerText = "❌ إجابة خاطئة. الإجابة الصحيحة هي الموضحة باللون الأخضر.";
+                feedbackText.className = "text-sm font-bold text-red-700";
+            }
+            updateScore();
+        }
+
+        function nextQuestion() {
+            currentQ++;
+            if (currentQ < questions.length) {
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-container').classList.add('hidden');
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.classList.remove('hidden');
+            
+            const finalScoreSpan = document.getElementById('final-score');
+            finalScoreSpan.innerText = score;
+            
+            const msgDiv = document.getElementById('result-message');
+            let percentage = (score / questions.length) * 100;
+            
+            if(percentage >= 90) {
+                msgDiv.innerHTML = "🌟 <strong>مستوى خبير!</strong> أداء استثنائي يدل على تمكنك التام من الكفايات.";
+                msgDiv.className = "text-sm text-green-800 bg-green-50 p-4 rounded-lg";
+            } else if (percentage >= 75) {
+                msgDiv.innerHTML = "👏 <strong>مستوى متقدم.</strong> لديك أساس معرفي قوي جداً.";
+                msgDiv.className = "text-sm text-blue-800 bg-blue-50 p-4 rounded-lg";
+            } else {
+                msgDiv.innerHTML = "📚 <strong>بداية جيدة.</strong> ننصحك بمراجعة الدليل المرجعي مرة أخرى لتعزيز المعلومات.";
+                msgDiv.className = "text-sm text-slate-800 bg-slate-50 p-4 rounded-lg";
+            }
         }
     </script>
 </body>
